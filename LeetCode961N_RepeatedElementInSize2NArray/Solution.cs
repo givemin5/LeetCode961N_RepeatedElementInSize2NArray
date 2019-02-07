@@ -10,7 +10,18 @@ namespace LeetCode961N_RepeatedElementInSize2NArray
     {
         public int RepeatedNTimes(int[] A)
         {
-            throw new NotImplementedException();
+            for (int i = 0; i < A.Length-1; i++)
+            {
+                var item = A[i];
+                for (int j = i+1; j < A.Length; j++)
+                {
+                    if (item == A[j])
+                    {
+                        return item;
+                    }
+                }
+            }
+            throw new Exception("Not Found");
         }
     }
 }
